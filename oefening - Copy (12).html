@@ -10,11 +10,30 @@
             // Het level inladen
             robotArm.loadLevel("exercise 12");
             // Jou instructies volgen hier
-            for(var i = 1; i<= 9; i++){
-                robotArm.moveRight();
-                robotArm.grab();
-                for( var e = 1; e<= )
+        
+
+            for (var i = 1; i<= 9; i++){
+                robotArm.grab()
+                var o = 10 - i
+                for(var e = 1; e<= 1; e++){
+                    var kleur = robotArm.scan();
+                    if(kleur == "red"){
+                        for(var u = 1; u<= o; u++){
+                            robotArm.moveRight();
+                        }
+                        robotArm.drop();
+                        var p = 9 - i
+                        for(var c = 1; c<= p; c++){
+                            robotArm.moveLeft();
+                        }
+                    }
+                    else{
+                        robotArm.drop()
+                        robotArm.moveRight();
+                    }
+                }
             }
+
             // De door jou opgegeven instructies uitvoeren
             robotArm.run();
         </script>
